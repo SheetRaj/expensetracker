@@ -20,15 +20,17 @@ function moneyFormatter(num) {
     );
 }
 
+
 const Balance = () => {
     const { transactions } = useContext(GlobalContext);
     const amounts = transactions && transactions.map(transaction => transaction.amount);
 
     const total = amounts && amounts.reduce((acc, item) => (acc += item), 0);
+    const totalColor = total < 0 ? "red" : "green";
     return (
         <>
             <h4>Your Balance</h4>
-            <h1>{moneyFormatter(total)}</h1>
+            <h1 style={{ color: totalColor }}>{moneyFormatter(total)}</h1>
         </>
     )
 }

@@ -4,7 +4,7 @@ import { GlobalContext } from '../context/GlobalState';
 const AddTransaction = () => {
 
     const [text, setText] = useState('');
-    const [amount, setAmount] = useState(0);
+    const [amount, setAmount] = useState();
     const { addTransaction } = useContext(GlobalContext);
 
     const onSubmit = e => {
